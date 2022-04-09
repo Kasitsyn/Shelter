@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./scss/main.css">
     <title>Cozy House</title>
 </head>
 
@@ -145,35 +145,72 @@
 
             </div>
         </section>
-        <footer class="footer">
-            <div class="footer__content">
-                <div class="footer__contacts contacts">
-                    <h3 class="contacts__title">
-                        For questions
-                        <br>
-                        and suggestions
-                    </h3>
-                    <img class="contacts__icon" src="../../assets/icons/svg/icon-email.svg">
-                    <span class="contacts__text">email@shelter.com</span>
-                    <img class="contacts__icon" src="../../assets/icons/svg/icon-phone.svg">
-                    <span class="contacts__text">+13 674 567 75 54</span>
-                </div>
-                <div class="footer__locaions locaions">
-                    <h3 class="locaions__title">
-                        We are waiting
-                        <br>
-                        for your visit
-                    </h3>
-                    <img class="locaions__icon" src="../../assets/icons/svg/pin.svg">
-                    <span class="locaions__text">1 Central Street, Boston <br> (entrance from the store)</span>
-                    <img class="locaions__icon" src="../../assets/icons/svg/pin.svg">
-                    <span class="locaions__text">18 South Park, London </span>
-                </div>
-
-            </div>
-            <img class="footer__picture" src="../../assets/images/png/footer-puppy.png" alt="puppy">
-        </footer>
     </main>
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__contacts contacts">
+                <h3 class="contacts__title">
+                    For questions
+                    <br>
+                    and suggestions
+                </h3>
+                <img class="contacts__icon" src="../../assets/icons/svg/icon-email.svg">
+                <span class="contacts__text">email@shelter.com</span>
+                <img class="contacts__icon" src="../../assets/icons/svg/icon-phone.svg">
+                <span class="contacts__text">+13 674 567 75 54</span>
+            </div>
+            <div class="footer__locaions locaions">
+                <h3 class="locaions__title">
+                    We are waiting
+                    <br>
+                    for your visit
+                </h3>
+                <img class="locaions__icon" src="../../assets/icons/svg/pin.svg">
+                <span class="locaions__text">1 Central Street, Boston <br> (entrance from the store)</span>
+                <img class="locaions__icon" src="../../assets/icons/svg/pin.svg">
+                <span class="locaions__text">18 South Park, London </span>
+            </div>
+
+        </div>
+        <img class="footer__picture" src="../../assets/images/png/footer-puppy.png" alt="puppy">
+    </footer>
+    <section class="modal-pet">
+        <button class="modal-pet__btn-close">
+            <img class="modal-pet__close-icon" src="../../assets/icons/svg/modal_close_button.svg"
+                alt="close modal window button">
+        </button>
+        <div class="modal-pet__window">
+            <img class="modal-pet__picture" src="../../assets/images/jpg/pets-jennifer.jpg" alt="Jennifer Dog Labrador">
+            <div class="modal-pet__content">
+                <h3 class="modal-pet__title">Jennifer</h3>
+                <p class="modal-pet__subtitle">Dog - Labrador</p>
+                <p class="modal-pet__text">
+                    Jennifer is a sweet 2 months old Labrador that<br>
+                    is patiently waiting to find a new forever<br>
+                    home. This girl really enjoys being able to go<br>
+                    outside to run and play, but won't hesitate to<br>
+                    play up a storm in the house if she has all of<br>
+                    her favorite toys.
+                </p>
+                <dl class="modal-pet__list">
+                    <dt class="modal-pet__item">Age:</dt>
+                    <dd class="modal-pet__item-description">2 months</dd>
+
+                    <dt class="modal-pet__item">Inoculations:</dt>
+                    <dd class="modal-pet__item-description">none</dd>
+
+                    <dt class="modal-pet__item">Diseases:</dt>
+                    <dd class="modal-pet__item-description">none</dd>
+
+                    <dt class="modal-pet__item">Parasites:</dt>
+                    <dd class="modal-pet__item-description">none</dd>
+
+                </dl>
+            </div>
+
+        </div>
+
+    </section>
 </body>
 
 </html>
