@@ -1,3 +1,242 @@
-@import "./_var";
-@import "./header";
-@import "./footer";
+@import "./base/_reset";
+@import "./base/_normalize";
+@import "./base/typography";
+@import "./utils/_var";
+@import "./components/buttons";
+@import "./layout/_header";
+@import "./layout/_footer";
+
+
+body {
+    width: 1280px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+
+    font-family: $font-family-first;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+
+}
+
+.body-wrapper {
+    width: 1280px;
+    background-color: lightsteelblue;
+
+
+
+}
+
+.top-wrapper {
+
+    background-image: url(../../../../assets/images/png/start-screen-background.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.top-container {
+    padding: 60px 40px 0px 40px;
+}
+
+.start-screen {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // .start-screen__content
+
+    &__content {}
+
+    // .start-screen__tittle
+
+    &__tittle {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 130%;
+        color: $color-light-xl;
+        margin-bottom: 42px;
+    }
+
+    // .start-screen__subtitle
+
+    &__subtitle {
+        font-family: $font-family-second;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color: $color-dark-s;
+        margin-bottom: 42px;
+    }
+
+    // .start-screen__link
+
+    &__link {}
+
+    // .start-screen__picture
+
+    &__picture {
+        width: 698px;
+        height: 728px;
+    }
+}
+
+.main {}
+
+.image-containter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.about {
+
+    padding: 80px 40px 0px 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $color-light-xl;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 100px;
+
+    &__picture {
+
+        align-self: center;
+        width: 300px;
+        height: 408px;
+    }
+
+    // .about__content
+
+    &__content {}
+
+    // .about__title
+
+    &__title {
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        margin-bottom: 25px;
+
+    }
+
+    // .about__subtitle
+
+    &__subtitle {
+        font-family: $font-family-second;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color: $color-dark-xl;
+    }
+}
+
+.pets {
+
+    background-color: $color-light-l;
+
+    // .pets__content
+
+    &__content {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    // .pets__title
+
+    &__title {
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        margin-bottom: 60px;
+    }
+
+    // .pets__slider
+
+    &__slider {
+        align-self: center;
+    }
+
+    // .pets__btn
+
+    &__btn {}
+}
+
+.slider {
+
+
+
+    display: flex;
+
+    & :first-child {
+        margin-right: 52px;
+    }
+
+    // .slider__btn-arrow
+
+    &__btn-arrow {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        width: 52px;
+        height: 52px;
+        left: 0px;
+        top: 192px;
+        border: 2px solid $color-primary;
+        box-sizing: border-box;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 100px;
+    }
+
+    & :last-child {
+        // margin-left: 53px;
+        // margin-right: 0;
+    }
+
+    &__items-container {
+        display: flex;
+
+        & :last-child {
+            margin-right: 0;
+        }
+    }
+
+    // .slider__item
+
+    &__item {
+        margin-right: 90px;
+        width: 270px;
+
+    }
+
+    // .slider__img
+
+    &__img {
+        border-radius: 9px 9px 0px 0px;
+    }
+
+    // .slider__text
+
+    &__text {}
+
+    // .slider__link
+
+    &__link {}
+}

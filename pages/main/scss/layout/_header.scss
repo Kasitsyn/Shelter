@@ -1,0 +1,73 @@
+@import "../utils/_var";
+
+.header {
+
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    // .header__logo
+
+    &__logo {}
+
+    // .header__title
+
+    &__title {
+        color: $color-primary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        margin-bottom: 10px;
+    }
+
+    // .header__subtitle
+
+    &__subtitle {
+        font-family: $font-family-second;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        color: $color-light-xl;
+    }
+
+    // .header__menu
+
+    &__menu {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color: $color-dark-s;
+
+        & :last-child {
+            margin-right: 0;
+        }
+
+    }
+
+    // .header__link
+
+    &__link {
+
+        margin-right: 35px;
+        padding-bottom: 2px;
+
+        // .header__link--active
+
+        &--active {
+            color: $color-light-s;
+            border-bottom: 3px $color-primary solid ;
+        }
+
+    }
+
+    
+
+}
+
