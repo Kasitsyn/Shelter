@@ -472,7 +472,7 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 207px;
+  width: 198px;
   height: 52px;
   background: #F1CDB3;
   border-radius: 100px;
@@ -546,6 +546,7 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 60px;
 }
 
 .header__title {
@@ -555,6 +556,7 @@ template {
   font-size: 32px;
   line-height: 110%;
   margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
 .header__subtitle {
@@ -568,6 +570,7 @@ template {
 }
 
 .header__menu {
+  margin-top: 16px;
   font-family: 'Arial';
   font-style: normal;
   font-weight: 400;
@@ -606,16 +609,20 @@ template {
 }
 
 .footer .contacts__wrapper {
-  margin-right: 120px;
+  margin-right: 180px;
+}
+
+.footer .location__wrapper {
+  margin-left: 100px;
 }
 
 .footer__contacts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .footer .contacts__container {
@@ -639,9 +646,9 @@ template {
   font-weight: 400;
   font-size: 35px;
   line-height: 130%;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.01em;
   color: #FFFFFF;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .contacts__icon {
@@ -651,7 +658,7 @@ template {
 }
 
 .contacts__text {
-  margin-top: 30px;
+  margin-top: 20px;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -662,21 +669,47 @@ template {
 }
 
 .locaions__title {
+  margin-top: 10px;
   font-style: normal;
   font-weight: 400;
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #FFFFFF;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .locaions__icon {
-  margin-right: 20px;
+  margin-right: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 35px;
 }
 
 .locaions__text {
-  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -711,7 +744,7 @@ body {
 }
 
 .top-container {
-  padding: 60px 40px 0px 40px;
+  padding: 40px 40px 0px 40px;
 }
 
 .start-screen {
@@ -727,12 +760,14 @@ body {
 }
 
 .start-screen__tittle {
+  margin-top: -80px;
   font-style: normal;
   font-weight: 400;
   font-size: 44px;
   line-height: 130%;
   color: #FFFFFF;
   margin-bottom: 42px;
+  letter-spacing: 0.01em;
 }
 
 .start-screen__subtitle {
@@ -779,6 +814,7 @@ body {
 }
 
 .about__picture {
+  margin-left: 35px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -844,6 +880,7 @@ body {
 }
 
 .pets__btn {
+  width: 250px;
   margin: 0 auto;
 }
 
@@ -908,6 +945,10 @@ body {
   background-color: #FFFFFF;
 }
 
+.slider__img {
+  margin-bottom: 27px;
+}
+
 .slider__text {
   font-weight: 400;
   font-size: 20px;
@@ -926,7 +967,7 @@ body {
 
 .help {
   background-color: #FFFFFF;
-  padding-bottom: 100px;
+  padding-bottom: 85px;
 }
 
 .help__title {
@@ -941,14 +982,11 @@ body {
 }
 
 .help__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 55px;
 }
 
 .help__list :first-child {
@@ -957,7 +995,7 @@ body {
 
 .help__item {
   text-align: center;
-  margin-right: 100px;
+  margin-right: 50px;
 }
 
 .help__item--new-line {
@@ -966,6 +1004,15 @@ body {
 }
 
 .help__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 30px;
   width: 60px;
   height: 60px;
@@ -982,7 +1029,7 @@ body {
 }
 
 .donation {
-  padding-top: 80px;
+  padding-top: 50px;
   background-color: #F6F6F6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -995,7 +1042,16 @@ body {
           align-items: center;
 }
 
+.donation__picture {
+  margin-top: 35px;
+  margin-right: 30px;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
 .donation__title {
+  margin-top: 23px;
   font-style: normal;
   font-weight: 400;
   font-size: 35px;
@@ -1119,5 +1175,113 @@ body {
 .disabled {
   border: 2px solid #CDCDCD;
   color: #CDCDCD;
+  width: 52px;
+  height: 52px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+}
+
+.modal-pet__btn-close {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  left: 890px;
+  top: 0px;
+  border: 2px solid #F1CDB3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+}
+
+.modal-pet {
+  display: none;
+  position: relative;
+  background: #FAFAFA;
+}
+
+.modal-pet__window {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-pet__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.modal-pet__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  /* identical to box height, or 23px */
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.modal-pet__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.modal-pet__list {
+  margin-left: 15px;
+}
+
+.modal-pet__item {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.modal-pet__item::before {
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #F1CDB3;
+  /* Change the color */
+  font-weight: 400;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 10px;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */
+}
+
+.modal-pet__item-description {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
 }
 /*# sourceMappingURL=main.css.map */

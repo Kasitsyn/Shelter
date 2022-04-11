@@ -38,7 +38,7 @@ body {
 }
 
 .top-container {
-    padding: 60px 40px 0px 40px;
+    padding: 40px 40px 0px 40px;
 }
 
 .start-screen {
@@ -54,12 +54,14 @@ body {
     // .start-screen__tittle
 
     &__tittle {
+        margin-top: -80px;
         font-style: normal;
         font-weight: 400;
         font-size: 44px;
         line-height: 130%;
         color: $color-light-xl;
         margin-bottom: 42px;
+        letter-spacing: 0.01em;
     }
 
     // .start-screen__subtitle
@@ -107,7 +109,7 @@ body {
     padding-bottom: 100px;
 
     &__picture {
-
+        margin-left: 35px;
         align-self: center;
         width: 300px;
         height: 408px;
@@ -178,7 +180,9 @@ body {
     // .pets__btn
 
     &__btn {
+        width: 250px;
         margin: 0 auto;
+        
     }
 }
 
@@ -231,7 +235,9 @@ body {
 
     // .slider__img
 
-    &__img {}
+    &__img {
+        margin-bottom: 27px;
+    }
 
     // .slider__text
 
@@ -258,7 +264,7 @@ body {
 
 .help {
     background-color: $color-light-xl;
-    padding-bottom: 100px;
+    padding-bottom: 85px;
 
     // .help__content
 
@@ -288,9 +294,12 @@ body {
             margin-left: 50px;
         }
 
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-row-gap: 55px;
 
     }
 
@@ -298,7 +307,7 @@ body {
 
     &__item {
         text-align: center;
-        margin-right: 100px;
+        margin-right: 50px;
 
         &--new-line {
             margin-right: 0;
@@ -307,6 +316,9 @@ body {
     }
 
     &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-bottom: 30px;
         width: 60px;
         height: 60px;
@@ -317,18 +329,20 @@ body {
     // .help__text
 
     &__text {
+
         font-weight: 400;
         font-size: 20px;
         line-height: 115%;
         text-align: center;
         letter-spacing: 0.06em;
         color: $color-dark-l;
+        
     }
 
 }
 
 .donation {
-    padding-top: 80px;
+    padding-top: 50px;
     background-color: $color-light-l;
     display: flex;
     justify-content: center;
@@ -336,7 +350,11 @@ body {
 
     // .donation__picture
 
-    &__picture {}
+    &__picture {
+        margin-top: 35px;
+        margin-right: 30px;
+        align-self: start;
+    }
 
     // .donation__content
 
@@ -345,7 +363,7 @@ body {
     // .donation__title
 
     &__title {
-
+        margin-top: 23px;
         font-style: normal;
         font-weight: 400;
         font-size: 35px;
@@ -510,19 +528,171 @@ body {
     border-radius: 100px;
     filter: none;
     margin-right: 20px;
-    
+
 
     &__active {
         filter: none;
         margin-right: 20px;
     }
-    &:hover {
 
-    }
+   
 }
 
 .disabled {
     border: 2px solid #CDCDCD;
     color: #CDCDCD;
-    
+
+    width: 52px;
+    height: 52px;
+
+    text-align: center;
+    box-sizing: border-box;
+
+    border-radius: 100px;
+
+}
+
+.modal-pet__btn-close {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 890px;
+    top: 0px;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+
+}
+
+.modal-pet {
+    display: none;
+    position: relative;
+    background: #FAFAFA;
+    // .modal-pet__btn-close
+
+    &__btn-close {}
+
+    // .modal-pet__close-icon
+
+    &__close-icon {}
+
+    // .modal-pet__window
+
+    &__window {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // .modal-pet__picture
+
+    &__picture {}
+
+    // .modal-pet__content
+
+    &__content {}
+
+    // .modal-pet__title
+
+    &__title {
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+
+        letter-spacing: 0.06em;
+
+        color: #000000;
+        margin-bottom: 10px;
+    }
+
+    // .modal-pet__subtitle
+
+    &__subtitle {
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        /* identical to box height, or 23px */
+
+        letter-spacing: 0.06em;
+
+        color: #000000;
+        margin-bottom: 40px;
+    }
+
+    // .modal-pet__text
+
+    &__text {
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        /* or 17px */
+
+        letter-spacing: 0.06em;
+
+        color: #000000;
+        margin-bottom: 40px;
+    }
+
+    // .modal-pet__list
+
+    &__list {
+        margin-left: 15px;
+    }
+
+    // .modal-pet__item
+
+    &__item {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 110%;
+        /* identical to box height, or 17px */
+
+        letter-spacing: 0.06em;
+
+        color: #000000;
+
+        &::before {
+            content: "\2022";
+            /* Add content: \2022 is the CSS Code/unicode for a bullet */
+            color: #F1CDB3;
+            /* Change the color */
+            font-weight: 400;
+            /* If you want it to be bold */
+            display: inline-block;
+            /* Needed to add space between the bullet and the text */
+            width: 10px;
+            /* Also needed for space (tweak if needed) */
+            margin-left: -1em;
+            /* Also needed for space (tweak if needed) */
+        }
+    }
+
+    // .modal-pet__item-description
+
+    &__item-description {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        /* identical to box height, or 17px */
+
+        letter-spacing: 0.06em;
+
+        color: #000000;
+    }
+}
+
+.btn {
+
+    // .btn--our-pets
+
+    &--our-pets {}
 }

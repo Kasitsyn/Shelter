@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    padding-bottom: 60px;
 
     // .header__logo
 
@@ -21,6 +21,7 @@
         font-size: 32px;
         line-height: 110%;
         margin-bottom: 10px;
+        letter-spacing: 2px;
     }
 
     // .header__subtitle
@@ -38,6 +39,8 @@
     // .header__menu
 
     &__menu {
+        margin-top: 16px;
+        
         font-family: 'Arial';
         font-style: normal;
         font-weight: 400;
