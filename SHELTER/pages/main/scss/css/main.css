@@ -593,6 +593,10 @@ template {
   border-bottom: 3px #F1CDB3 solid;
 }
 
+.header__link:hover {
+  color: #FAFAFA;
+}
+
 .footer {
   padding-top: 56px;
   background-image: url(../../../../assets/images/png/start-screen-background.png);
@@ -943,6 +947,7 @@ body {
   -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
           box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 
 .slider__img {
@@ -1113,7 +1118,8 @@ body {
 }
 
 .header--our-pets {
-  padding: 47px 40px;
+  padding: 10px 40px;
+  padding-bottom: 30px;
   background: #FFFFFF;
 }
 
@@ -1127,6 +1133,10 @@ body {
 
 .header__link--our-pets {
   color: #545454;
+}
+
+.header__link--our-pets:hover {
+  color: #292929;
 }
 
 .slider--our-pets {

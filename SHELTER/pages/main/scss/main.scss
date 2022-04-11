@@ -229,6 +229,7 @@ body {
         &:hover {
             box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
             background-color: $color-light-xl;
+            cursor: pointer;
         }
 
     }
@@ -442,7 +443,8 @@ body {
     // .header--our-pets
 
     &--our-pets {
-        padding: 47px 40px;
+        padding: 10px 40px;
+        padding-bottom: 30px;
         background: #FFFFFF;
     }
 
@@ -489,11 +491,17 @@ body {
 
         &--our-pets {
             color: #545454;
+
+            &:hover {
+                color: #292929;
+            }
         }
 
         // .header__link--active
 
         &--active {}
+
+        
     }
 }
 
