@@ -1,1 +1,124 @@
 @import "../utils/_var";
+
+.footer {
+    padding-top: 56px;
+    background-image: url(../../../../assets/images/png/start-screen-background.png);
+    // padding-bottom: 60px;
+    // display: flex;
+
+    // .footer__content
+
+    &__content {
+        display: flex;
+        margin-left: 40px;
+        justify-content: space-between;
+    }
+
+
+
+    .contacts__wrapper {
+        margin-right: 120px;
+    }
+
+    .location__wrapper {
+        // margin-right: 120px;
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+
+    }
+
+    .contacts__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    // .footer__locaions
+
+    &__locaions {}
+
+    // .footer__picture
+
+    &__picture {
+        margin-right: 40px;
+    }
+}
+
+.contacts {
+
+    // .contacts__title
+
+    &__title {
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: $color-light-xl;
+        margin-bottom: 40px;
+    }
+
+    // .contacts__icon
+
+    &__icon {
+        align-self: center;
+        
+    }
+
+    // .contacts__text
+
+    &__text {
+        margin-top: 30px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: $color-primary;
+        margin-bottom: 40px;
+
+    }
+}
+
+.locaions {
+
+    // .locaions__title
+
+    &__title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: $color-light-xl;
+        margin-bottom: 40px;
+    }
+
+    // .locaions__icon
+
+    &__icon {
+        margin-right: 20px;
+    }
+
+    // .locaions__text
+
+    &__text {
+        margin-top: 30px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: $color-primary;
+        margin-bottom: 40px;
+        
+    }
+}

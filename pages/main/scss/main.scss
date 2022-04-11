@@ -144,7 +144,7 @@ body {
 .pets {
 
     background-color: $color-light-l;
-
+    padding-bottom: 100px;
     // .pets__content
 
     &__content {
@@ -172,29 +172,24 @@ body {
 
     &__slider {
         align-self: center;
+        margin-bottom: 60px;
     }
 
     // .pets__btn
 
-    &__btn {}
+    &__btn {
+        margin: 0 auto;
+    }
 }
 
 .slider {
 
-
-
     display: flex;
+    justify-content: space-between;
+    margin-left: 52px;
 
-    & :first-child {
-        margin-right: 52px;
-    }
-
-    // .slider__btn-arrow
 
     &__btn-arrow {
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
         width: 52px;
         height: 52px;
         left: 0px;
@@ -203,11 +198,7 @@ body {
         box-sizing: border-box;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         border-radius: 100px;
-    }
-
-    & :last-child {
-        // margin-left: 53px;
-        // margin-right: 0;
+        margin-right: 52px;
     }
 
     &__items-container {
@@ -223,20 +214,315 @@ body {
     &__item {
         margin-right: 90px;
         width: 270px;
+        background-color: $color-light-s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        border-radius: 9px 9px 0px 0px;
+
+        &:hover {
+            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+            background-color: $color-light-xl;
+        }
 
     }
 
     // .slider__img
 
-    &__img {
-        border-radius: 9px 9px 0px 0px;
-    }
+    &__img {}
 
     // .slider__text
 
-    &__text {}
+    &__text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        margin-bottom: 30px;
+    }
 
     // .slider__link
 
-    &__link {}
+    &__link {
+
+        background-color: $color-light-s;
+        border: 2px solid $color-primary-light;
+        color: $color-dark-3xl;
+
+    }
+}
+
+.help {
+    background-color: $color-light-xl;
+    padding-bottom: 100px;
+
+    // .help__content
+
+    &__content {}
+
+    // .help__title
+
+    &__title {
+
+
+        padding-top: 80px;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        margin-bottom: 60px;
+
+
+    }
+
+    // .help__list
+
+    &__list {
+        & :first-child {
+            margin-left: 50px;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+    // .help__item
+
+    &__item {
+        text-align: center;
+        margin-right: 100px;
+
+        &--new-line {
+            margin-right: 0;
+            margin-left: 100px;
+        }
+    }
+
+    &__icon {
+        margin-bottom: 30px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+
+    }
+
+    // .help__text
+
+    &__text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+    }
+
+}
+
+.donation {
+    padding-top: 80px;
+    background-color: $color-light-l;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // .donation__picture
+
+    &__picture {}
+
+    // .donation__content
+
+    &__content {}
+
+    // .donation__title
+
+    &__title {
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        margin-bottom: 20px;
+
+
+    }
+
+    // .donation__subtitle
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        margin-bottom: 20px;
+    }
+
+    // .donation__credit-card
+
+    &__credit-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 349px;
+        height: 43px;
+        background: $color-primary;
+        border-radius: 9px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: $color-dark-l;
+        margin-bottom: 20px;
+    }
+
+    // .donation__legal-information
+
+    &__legal-information {
+        font-family: $font-family-second;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        // display: flex;
+        // align-items: center;
+        color: $color-dark-m;
+        padding-bottom: 100px;
+    }
+}
+
+.credit-card {
+
+    // .credit-card__icon
+
+    &__icon {
+        margin-right: 15px;
+    }
+
+    // .credit-card__number
+
+    &__number {}
+}
+
+// ===================OUR PETS=================================
+
+.header {
+
+    // .header--our-pets
+
+    &--our-pets {
+        padding: 47px 40px;
+        background: #FFFFFF;
+    }
+
+    // .header__logo
+
+    &__logo {
+
+        // .header__logo--our-pets
+
+        &--our-pets {}
+    }
+
+    // .header__title
+
+    &__title {
+
+        // .header__title--our-pets
+
+        &--our-pets {
+            color: #545454;
+        }
+    }
+
+    // .header__subtitle
+
+    &__subtitle {
+
+        // .header__subtitle--our-pets
+
+        &--our-pets {
+            color: #292929;
+        }
+    }
+
+    // .header__menu
+
+    &__menu {}
+
+    // .header__link
+
+    &__link {
+
+        // .header__link--our-pets
+
+        &--our-pets {
+            color: #545454;
+        }
+
+        // .header__link--active
+
+        &--active {}
+    }
+}
+
+
+.slider--our-pets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+    justify-content: center;
+
+
+
+}
+
+.slider__item--our-pets {
+    margin: 0px;
+    border-radius: 9px 9px 0px 0px;
+
+
+}
+
+.slider__paginator {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn--our-pets {
+    background-color: #F6F6F6;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    filter: none;
+    margin-right: 20px;
+    
+
+    &__active {
+        filter: none;
+        margin-right: 20px;
+    }
+    &:hover {
+
+    }
+}
+
+.disabled {
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+    
 }
