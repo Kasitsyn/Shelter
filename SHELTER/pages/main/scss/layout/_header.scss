@@ -2,6 +2,10 @@
 
 .header {
 
+    .burger {
+        display: none;
+    }
+
     width: auto;
     display: flex;
     justify-content: space-between;
@@ -78,14 +82,13 @@
 
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1279.98px) {
     .header {
 
         width: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        // margin-bottom: 140px;
 
         // .header__logo
 
@@ -127,7 +130,98 @@
             font-weight: 400;
             font-size: 15px;
             line-height: 160%;
-            
+
+
+            color: $color-dark-s;
+
+            & :last-child {
+                margin-right: 0;
+            }
+
+            & :first-child {
+                // margin-right: 50px;
+            }
+
+        }
+
+        // .header__link
+
+        &__link {
+
+            display: block;
+            margin-right: 35px;
+            padding-bottom: 1px;
+
+            // .header__link--active
+
+            &--active {
+                color: $color-light-s;
+                border-bottom: 3px $color-primary solid;
+            }
+
+            &:hover {
+                color: #FAFAFA;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .header {
+
+        .burger {
+            display: initial;
+            margin-left: 40px;
+            margin-top: 24px;
+        }
+
+        width: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        // .header__logo
+
+        &__logo {}
+
+        // .header__title
+
+        &__title {
+            color: $color-primary;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 110%;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        // .header__subtitle
+
+        &__subtitle {
+            font-family: $font-family-second;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 15px;
+            letter-spacing: 0.1em;
+            color: $color-light-xl;
+            text-align: center;
+        }
+
+        // .header__menu
+
+        &__menu {
+            display: none;
+            margin-top: 18px;
+            text-align: center;
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 160%;
+
 
             color: $color-dark-s;
 
