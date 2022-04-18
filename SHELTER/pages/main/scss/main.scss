@@ -2074,23 +2074,17 @@ body {
     // ===================OUR PETS=================================
     .header--our-pets {
         position: fixed;
-        padding: 10px 30px;
+        padding: 10px   10px;
         padding-bottom: 30px;
         background: #ffffff;
-        width: 768px;
+        width: 320px;
 
     }
 
     .header {
-
-        // width: auto;
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
-        // width: 768px;
-        // .header--our-pets
-
-
+        .burger {
+            display: initial;
+        }
 
         // .header__logo
 
@@ -2151,8 +2145,8 @@ body {
 
     .pets--our-pets {
 
-        padding-top: 200px;
-        padding-bottom: 75px;
+        padding-top: 160px;
+        padding-bottom: 45px;
         margin: 0;
 
 
@@ -2164,21 +2158,151 @@ body {
         .pets__title {
             padding: 0;
             margin: 0;
+            padding-bottom: 40px;
+            
         }
     }
 
     .slider--our-pets {
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 40px;
-        grid-row-gap: 30px;
-        justify-content: center;
-        margin-bottom: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        // grid-template-columns: 1fr 1fr 1fr;
+        // grid-column-gap: 12px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        margin-bottom: 42px;
+        justify-content: space-around;
+
+        .btn-arrow {
+
+            margin: 0;
+            order: 1;
+            width: 52px;
+            height: 52px;
+            border: 2px solid $color-primary;
+            box-sizing: border-box;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: static;
+            justify-self: center;
+            margin-left: 30px;
+
+            &__img {
+                position: absolute;
+                left: 36.54%;
+                right: 36.54%;
+                top: 44.23%;
+                bottom: 44.23%;
+
+            }
+
+            &--right {
+                transform: rotate(180deg);
+                margin: 0;
+                justify-self: end;
+                order: 2;
+                margin-right: 30px;
+            }
+
+            &:hover {
+                background-color: $color-primary-light;
+                cursor: pointer;
+
+            }
+        }
+
+        &__items-container {
+            display: grid;
+            grid-template-columns: 1fr ;
+            grid-column-gap: 40px;
+            order: 0;
+            margin-bottom: 20px;
+
+
+            & :last-child {
+                margin: 0;
+                
+            }
+
+            & :first-child {
+                margin: 0;
+                
+            }
+
+            & :nth-child(2) {
+                display: none;
+            }
 
 
 
+        }
 
+        // .slider__item
+
+        &__item {
+            margin: 0;
+            width: 270px;
+            height: 435px;
+            background-color: $color-light-s;
+            padding-bottom: 30px;
+            border-radius: 9px 9px 0px 0px;
+
+            &:hover {
+                box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+                background-color: $color-light-xl;
+                cursor: pointer;
+            }
+
+            &:nth-child(3) {
+                display: none;
+            }
+
+
+        }
+
+        // .slider__img
+
+        &__img {
+            // margin-bottom: 27px;
+        }
+
+        // .slider__text
+
+        &__text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            // text-align: center;
+            letter-spacing: 0.06em;
+            color: $color-dark-l;
+            margin: 0;
+        }
+
+        // .slider__link
+
+        &__link {
+
+            background-color: $color-light-s;
+            border: 2px solid $color-primary-light;
+            color: $color-dark-3xl;
+            width: 190px;
+
+        }
+
+
+    }
+    .slider__item--our-pets:nth-child(4) {
+        display: none;
+    }
+    .slider__item--our-pets:nth-child(5) {
+        display: none;
+    }
+    .slider__item--our-pets:nth-child(6) {
+        display: none;
     }
 
     .slider__item--our-pets:nth-child(3) {
@@ -2206,7 +2330,8 @@ body {
     }
 
     .slider__paginator {
-        margin-left: 20px;
+        
+        margin-left: 10px;
         display: flex;
         justify-content: flex-start;
     }
@@ -2217,12 +2342,12 @@ body {
         box-sizing: border-box;
         border-radius: 100px;
         filter: none;
-        margin-right: 20px;
+        margin-right: 10px;
 
 
         &__active {
             filter: none;
-            margin-right: 20px;
+            margin-right: 10px;
         }
 
 
