@@ -729,7 +729,7 @@ template {
 }
 
 .footer {
-  padding-top: 56px;
+  padding-top: 36px;
   background-image: url(../../../assets/images/png/start-screen-background.png);
 }
 
@@ -744,7 +744,7 @@ template {
 }
 
 .footer .contacts__wrapper {
-  margin-right: 180px;
+  margin-right: 160px;
 }
 
 .footer .location__wrapper {
@@ -758,18 +758,19 @@ template {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  margin-top: 20px;
 }
 
 .footer .contacts__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px 1fr;
+      grid-template-columns: 40px 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .footer__picture {
@@ -781,7 +782,7 @@ template {
   font-weight: 400;
   font-size: 35px;
   line-height: 130%;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.06em;
   color: #FFFFFF;
   margin-bottom: 20px;
 }
@@ -800,11 +801,10 @@ template {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .locaions__title {
-  margin-top: 10px;
   font-style: normal;
   font-weight: 400;
   font-size: 35px;
@@ -835,15 +835,6 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-top: 10px;
   font-style: normal;
   font-weight: 400;
@@ -851,7 +842,21 @@ template {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
+}
+
+.locaions .locations__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 22px 1fr;
+      grid-template-columns: 22px 1fr;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.locaions .locations__container :first-child {
+  margin-top: 10px;
+  margin-bottom: 18px;
 }
 
 @media (max-width: 1279.98px) {
@@ -860,7 +865,7 @@ template {
     background-image: url(../../../assets/images/png/start-screen-gradient-background.png);
   }
   .footer__content {
-    padding: 30px 64px 0px 64px;
+    padding: 10px 64px 0px 64px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -973,6 +978,10 @@ template {
     color: #F1CDB3;
     margin-bottom: 30px;
   }
+  .locaions .locations__container :first-child {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
   .laaaaaaast {
     margin-right: 30px;
   }
@@ -983,7 +992,7 @@ template {
     width: 320px;
     padding-top: 0px;
     background-image: url(../../../assets/images/png/start-screen-gradient-background.png);
-    padding-top: 30px;
+    padding-top: 10px;
   }
   .footer__content {
     padding: 0px;
@@ -1066,52 +1075,25 @@ template {
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #FFFFFF;
-    margin-bottom: 20px;
-    margin-left: 30px;
+    margin-bottom: 30px;
   }
   .locaions__title br {
     display: none;
   }
-  .locaions__icon {
-    margin-right: 0px;
-    display: inline;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 10px;
-    text-align: center;
-  }
   .locaions__text {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: -20px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-item-align: center;
-        align-self: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-top: 10px;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
     color: #F1CDB3;
-    margin-bottom: 30px;
   }
   .locaions .locations__container {
     margin-left: 10px;
-    margin-top: 10px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-column-gap: 3px;
+            column-gap: 3px;
   }
   .laaaaaaast {
     margin-right: 0px;
@@ -1279,7 +1261,7 @@ body {
 }
 
 .pets__btn {
-  width: 250px;
+  width: 260px;
   margin: 0 auto;
 }
 
@@ -1363,11 +1345,12 @@ body {
   background-color: #FAFAFA;
   border: 2px solid #FDDCC4;
   color: #292929;
+  width: 187px;
 }
 
 .help {
   background-color: #FFFFFF;
-  padding-bottom: 85px;
+  padding-bottom: 55px;
 }
 
 .help__title {
@@ -1382,38 +1365,26 @@ body {
 }
 
 .help__list {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-row-gap: 55px;
-}
-
-.help__list :first-child {
-  margin-left: 50px;
+  margin-left: 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .help__item {
   text-align: center;
-  margin-right: 50px;
+  margin-right: 120px;
+  margin-bottom: 55px;
 }
 
-.help__item--new-line {
-  margin-right: 0;
-  margin-left: 100px;
+.help__item:nth-child(6) {
+  margin-left: 85px;
 }
 
 .help__icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   width: 60px;
   height: 60px;
   text-align: center;
@@ -1444,13 +1415,14 @@ body {
 
 .donation__picture {
   margin-top: 35px;
-  margin-right: 30px;
+  margin-right: 20px;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
 }
 
 .donation__title {
+  margin-right: 90px;
   margin-top: 23px;
   font-style: normal;
   font-weight: 400;
@@ -1998,6 +1970,9 @@ body {
     margin-right: 0;
     margin-left: 0px;
   }
+  .help__item:nth-child(6) {
+    margin-left: 0px;
+  }
   .help__icon {
     display: inline;
     -webkit-box-pack: center;
@@ -2020,7 +1995,7 @@ body {
     color: #545454;
   }
   .donation {
-    padding-top: 60px;
+    padding-top: 0px;
     background-color: #F6F6F6;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2047,10 +2022,10 @@ body {
     margin-bottom: 100px;
   }
   .donation__content {
-    margin-right: 20px;
+    margin-right: 0px;
   }
   .donation__title {
-    margin-top: 23px;
+    margin-top: 30px;
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
@@ -2063,7 +2038,7 @@ body {
             align-items: center;
     letter-spacing: 0.06em;
     color: #545454;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .donation__subtitle {
     font-weight: 400;
@@ -2624,6 +2599,7 @@ body {
   .help__item {
     text-align: center;
     margin-right: 0px;
+    margin-bottom: 0px;
   }
   .help__item--new-line {
     margin-right: 0;
@@ -2746,7 +2722,7 @@ body {
   }
   .header--our-pets {
     position: fixed;
-    padding: 10px   10px;
+    padding: 10px 10px;
     padding-bottom: 30px;
     background: #ffffff;
     width: 320px;
