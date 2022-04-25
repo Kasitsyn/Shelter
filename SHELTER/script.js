@@ -107,14 +107,32 @@ const burgerNav = document.querySelector('.header__menu--burger')
 const burgerOverlay = document.querySelector('.burger__overlay')
 const headerLinkBurger = document.querySelectorAll('.header__link-burger')
 const sliderLine = document.querySelector('.slider__line')
-const btnFirst = document.querySelector('.btn--our-pets-first')
-const btnPrev = document.querySelector('.btn--our-pets-prev')
-const btnNext = document.querySelector('.btn--our-pets-next')
-const btnLast = document.querySelector('.btn--our-pets-last')
+const modalCloseBtn = document.querySelector('.modal-pet__close-icon')
 
-btnNext.addEventListener( 'click', () => {
-    offset += move
-    sliderLine.style.left = -offset + 'px'
+
+// const btnFirst = document.querySelector('.btn--our-pets-first')
+// const btnPrev = document.querySelector('.btn--our-pets-prev')
+// const btnNext = document.querySelector('.btn--our-pets-next')
+// const btnLast = document.querySelector('.btn--our-pets-last')
+
+// btnNext.addEventListener( 'click', () => {
+//     offset += move
+//     sliderLine.style.left = -offset + 'px'
+// })
+
+generateCards()
+
+
+
+modalCloseBtn.addEventListener('click', (e) => {
+
+    document.querySelector('.modal-overlay').classList.toggle('run')
+    e.stopPropagation()
+})
+
+document.querySelector('.modal-overlay').addEventListener('click', (e) => {
+
+    document.querySelector('.modal-overlay').classList.toggle('run')
 })
 
 function burgerToggle(event) {
@@ -125,7 +143,7 @@ function burgerToggle(event) {
 }
 
 
-generateCards()
+
 
 burgerBtnAll.forEach((btn) => {
     btn.classList.toggle('btn-burger-active')
@@ -149,14 +167,14 @@ let move = 1080
 
 
 if (window.matchMedia('(max-width: 1279.98px)').matches) {
-    alert('max-width: 1279.98px!')
+    
     offset = 540
     move = 540
 
 }
 
 if (window.matchMedia('(max-width: 767.98px)').matches) {
-    alert('max-width: 767.98px!')
+    
     offset = 270
     move = 270
 
@@ -166,6 +184,7 @@ if (window.matchMedia('(max-width: 767.98px)').matches) {
 
 document.querySelector('.btn-arrow--right').addEventListener('click', function () {
     generateCards()
+
     offset += move
     sliderLine.style.left = -offset + 'px'
 })
@@ -191,9 +210,33 @@ function generateCards() {
 
     for (let pet of petsBase) {
         sliderLine.insertAdjacentHTML('beforeend',
-            `<div class="slider__item"><img src = ${pet['img']} alt = "pet" class= "slider__img"><p class="slider__text">${pet['name']}</p><a href="#" class="slider__link btn">Learn more</a></div>`)
+            `<div class="slider__item"><img src = ${pet['img']} alt = "pet" class= "slider__img"><p class="slider__text">${pet['name']}</p><button id=${pet["id"]} class="slider__link btn">Learn more</button></div>`)
 
     }
+    let cardLink = document.querySelectorAll('.slider__link')
+    cardLink.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            let petId = btn.getAttribute("id")
+            
+            for (let elem of petsBase) {
+                if (elem['id'] == petId) {
+                    console.log(petId)
+                    document.querySelector('.modal-overlay').classList.toggle('run')
+                    document.querySelector('.modal-pet__title').innerHTML = elem['name']
+                    document.querySelector('.modal-pet__subtitle').innerHTML = `${elem['type']} - ${elem['breed']}`
+                    document.querySelector('.modal-pet__text').innerHTML = elem['description']
+                    document.querySelector('.modal-pet__item-description-age').innerHTML = elem['age']
+                    document.querySelector('.modal-pet__item-description-ino').innerHTML = elem['inoculations']
+                    document.querySelector('.modal-pet__item-description-dis').innerHTML = elem['diseases']
+                    document.querySelector('.modal-pet__item-description-par').innerHTML = elem['parasites']
+                    document.querySelector('.modal-pet__picture').src = elem['img']
+                }
+            }
 
+
+
+
+        })
+    })
 }
 

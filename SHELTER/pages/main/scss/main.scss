@@ -22,6 +22,8 @@ body {
 
 }
 
+
+
 .lock {
     overflow: hidden;
 }
@@ -2697,4 +2699,8 @@ body {
 
         &--our-pets {}
     }
+}
+
+.run {
+    display: flex;
 }
