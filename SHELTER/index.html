@@ -9,7 +9,7 @@
     <title>Cozy House</title>
 </head>
 
-<body>
+<body id="body">
 
     <div class="top-wrapper">
         <div class="top-container">
@@ -18,8 +18,34 @@
                     <h1 class="header__title"><a href="./index.html">Cozy House</a></h1>
                     <p class="header__subtitle">Shelter for pets in Boston</p>
                 </div>
-                <div class="burger">
+                <button class="burger__btn">
                     <img width="30" height="22" src="./assets/icons/svg/Burger.svg" alt="menu button">
+                </button>
+                <div class="burger">
+                    <div class="burger__overlay"></div>
+
+                    <nav class="header__menu--burger">
+                        <div class="burger-wrapper">
+                            <div class="header__logo header__logo--burger">
+                                <h1 class="header__title"><a href="./index.html">Cozy House</a></h1>
+                                <p class="header__subtitle">Shelter for pets in Boston</p>
+                            </div>
+                            <button class="burger__btn">
+                                <img width="30" height="22" src="./assets/icons/svg/Burger.svg" alt="menu button">
+                            </button>
+                        </div>
+
+
+                        <ul class="burger__nav-list">
+                            <li class="header__link-burger"><a href="#" class="header__link header__link--active ">About
+                                    the shelter</a></li>
+                            <li class="header__link-burger"><a href=" ./pages/main/Our-pets.html" class="header__link">
+                                    Our pets</a></li>
+                            <li class="header__link-burger"><a href=" #help" class="header__link">Help the shelter</a>
+                            </li>
+                            <li class="header__link-burger"><a href=" #contacts" class="header__link">Contacts</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 <nav class="header__menu">
                     <a href="#" class="header__link header__link--active">About the shelter</a>
@@ -75,26 +101,77 @@
                     are looking for a house
                 </h3>
                 <div class="pets__slider slider">
-                    <button class="slider__btn-arrow btn-arrow">
+                    <button class="slider__btn-arrow btn-arrow btn-arrow-left">
                         <img class="btn-arrow__img" src="./assets/icons/svg/Arrow.svg" alt="left">
                     </button>
                     <div class="slider__items-container">
-                        <div class="slider__item">
-                            <img src="./assets/images/png/pets-katrine.png" alt="beautiful cat" class="slider__img">
-                            <p class="slider__text">Katrine</p>
-                            <a href="#" class="slider__link btn">Learn more</a>
+                        <div class="slider__line">
+                           
+                            <!-- <div class="items items-left">
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-katrine.png" alt="beautiful cat"
+                                        class="slider__img">
+                                    <p class="slider__text">Katrine</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
 
-                        </div>
-                        <div class="slider__item">
-                            <img src="./assets/images/png/pets-jennifer.png" alt="little puppy" class="slider__img">
-                            <p class="slider__text">Jennifer</p>
-                            <a href="#" class="slider__link btn">Learn more</a>
+                                </div>
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-jennifer.png" alt="little puppy"
+                                        class="slider__img">
+                                    <p class="slider__text">Jennifer</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
 
-                        </div>
-                        <div class="slider__item">
-                            <img src="./assets/images/png/pets-woody.png" alt="adult dog" class="slider__img">
-                            <p class="slider__text">Woody</p>
-                            <a href="#" class="slider__link btn">Learn more</a>
+                                </div>
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-woody.png" alt="adult dog" class="slider__img">
+                                    <p class="slider__text">Woody</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
+                                </div>
+                            </div>
+                            <div class="items items-active">
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-katrine.png" alt="beautiful cat"
+                                        class="slider__img">
+                                    <p class="slider__text">Katrine</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
+
+                                </div>
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-jennifer.png" alt="little puppy"
+                                        class="slider__img">
+                                    <p class="slider__text">Jennifer</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
+
+                                </div>
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-woody.png" alt="adult dog" class="slider__img">
+                                    <p class="slider__text">Woody</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
+                                </div>
+                            </div>
+                            <div class="items items-right">
+
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-katrine.png" alt="beautiful cat"
+                                        class="slider__img">
+                                    <p class="slider__text">Katrine</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
+
+                                </div>
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-jennifer.png" alt="little puppy"
+                                        class="slider__img">
+                                    <p class="slider__text">Jennifer</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
+
+                                </div>
+                                <div class="slider__item">
+                                    <img src="./assets/images/png/pets-woody.png" alt="adult dog" class="slider__img">
+                                    <p class="slider__text">Woody</p>
+                                    <a href="#" class="slider__link btn">Learn more</a>
+                                </div>
+                            </div> -->
+                            
                         </div>
                     </div>
                     <button class="slider__btn-arrow btn-arrow btn-arrow--right">
@@ -117,8 +194,7 @@
                         <p class="help__text">Pet food</p>
                     </li>
                     <li class="help__item">
-                        <img class="help__icon" src="./assets/icons/svg/icon-transportation.svg"
-                            alt="transportation">
+                        <img class="help__icon" src="./assets/icons/svg/icon-transportation.svg" alt="transportation">
                         <p class="help__text">Transportation</p>
                     </li>
                     <li class="help__item">
@@ -126,8 +202,7 @@
                         <p class="help__text">Toys</p>
                     </li>
                     <li class="help__item">
-                        <img class="help__icon" src="./assets/icons/svg/icon-bowls-and-cups.svg"
-                            alt="Bowls and cups">
+                        <img class="help__icon" src="./assets/icons/svg/icon-bowls-and-cups.svg" alt="Bowls and cups">
                         <p class="help__text">Bowls and cups</p>
                     </li>
                     <li class="help__item">
@@ -148,8 +223,7 @@
                         <p class="help__text">Collars / leashes</p>
                     </li>
                     <li class="help__item help__item--new-line">
-                        <img class="help__icon" src="./assets/icons/svg/icon-sleeping-area.svg"
-                            alt="Sleeping areas">
+                        <img class="help__icon" src="./assets/icons/svg/icon-sleeping-area.svg" alt="Sleeping areas">
                         <p class="help__text">Sleeping areas</p>
                     </li>
                 </ul>
@@ -190,7 +264,8 @@
                     </h3>
                     <div class="contacts__container">
                         <img class="contacts__icon" src="./assets/icons/svg/icon-email.svg">
-                        <p class="contacts__text"><a type="email" href = "mailto: abc@example.com">email@shelter.com</a></p>
+                        <p class="contacts__text"><a type="email" href="mailto: abc@example.com">email@shelter.com</a>
+                        </p>
                     </div>
                     <div class="contacts__container">
                         <img class="contacts__icon" src="./assets/icons/svg/icon-phone.svg">
@@ -207,11 +282,13 @@
                         </h3>
                         <div class="contacts__container locations__container">
                             <img class="locaions__icon" src="./assets/icons/svg/pin.svg">
-                            <p class="locaions__text"><a href="https://www.google.com/maps"> 1 Central Street, Boston <br> (entrance from the store)</a></p>
+                            <p class="locaions__text"><a href="https://www.google.com/maps"> 1 Central Street, Boston
+                                    <br> (entrance from the store)</a></p>
                         </div>
                         <div class="contacts__container locations__container">
                             <img class="locaions__icon" src="./assets/icons/svg/pin.svg">
-                            <p class="locaions__text laaaaaaast"><a href="https://www.google.com/maps">18 South Park, London</a></p>
+                            <p class="locaions__text laaaaaaast"><a href="https://www.google.com/maps">18 South Park,
+                                    London</a></p>
                         </div>
                     </div>
                 </div>
@@ -219,41 +296,45 @@
             </div>
             <img class="footer__picture" src="./assets/images/png/footer-puppy.png" alt="puppy">
     </footer>
-    <section class="modal-pet">
-        <button class="modal-pet__btn-close btn--our-pets">
-            <img class="modal-pet__close-icon" src="./assets/icons/svg/modal_close_button.svg"
-                alt="close modal window button">
-        </button>
-        <div class="modal-pet__window">
-            <img class="modal-pet__picture" src="./assets/images/jpg/pets-jennifer.jpg" alt="Jennifer Dog Labrador">
-            <div class="modal-pet__content">
-                <h3 class="modal-pet__title">Jennifer</h3>
-                <p class="modal-pet__subtitle">Dog - Labrador</p>
-                <p class="modal-pet__text">
-                    Jennifer is a sweet 2 months old Labrador that<br>
-                    is patiently waiting to find a new forever<br>
-                    home. This girl really enjoys being able to go<br>
-                    outside to run and play, but won't hesitate to<br>
-                    play up a storm in the house if she has all of<br>
-                    her favorite toys.
-                </p>
-                <ul class="modal-pet__list">
-                    <li class="modal-pet__item">Age: <span class="modal-pet__item-description">2 months</span></li>
-                    
-                    <li class="modal-pet__item">Inoculations: <span class="modal-pet__item-description">none</span></li>
-                    
-                    <li class="modal-pet__item">Diseases: <span class="modal-pet__item-description">none</span></li>
-                    
-                    <li class="modal-pet__item">Parasites: <span class="modal-pet__item-description">none</span></li>
-                    
+    <div class="modal-overlay">
+        <div class="modal-pet">
+            <button class="modal-pet__btn-close btn--our-pets">
+                <img class="modal-pet__close-icon" src="./assets/icons/svg/modal_close_button.svg"
+                    alt="close modal window button">
+            </button>
+            <div class="modal-pet__window">
+                <img class="modal-pet__picture" src="./assets/images/jpg/pets-jennifer.jpg" alt="Jennifer Dog Labrador">
+                <div class="modal-pet__content">
+                    <h3 class="modal-pet__title">Jennifer</h3>
+                    <p class="modal-pet__subtitle">Dog - Labrador</p>
+                    <p class="modal-pet__text">
+                        Jennifer is a sweet 2 months old Labrador that<br>
+                        is patiently waiting to find a new forever<br>
+                        home. This girl really enjoys being able to go<br>
+                        outside to run and play, but won't hesitate to<br>
+                        play up a storm in the house if she has all of<br>
+                        her favorite toys.
+                    </p>
+                    <ul class="modal-pet__list">
+                        <li class="modal-pet__item">Age: <span class="modal-pet__item-description">2 months</span></li>
 
-                </ul>
+                        <li class="modal-pet__item">Inoculations: <span class="modal-pet__item-description">none</span>
+                        </li>
+
+                        <li class="modal-pet__item">Diseases: <span class="modal-pet__item-description">none</span></li>
+
+                        <li class="modal-pet__item">Parasites: <span class="modal-pet__item-description">none</span>
+                        </li>
+
+
+                    </ul>
+                </div>
+
             </div>
-
         </div>
 
-    </section>
-
+    </div>
+    <script type="module" src="./script.js"></script>
 </body>
 
 </html>

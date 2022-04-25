@@ -18,6 +18,12 @@ body {
     font-size: 20px;
     line-height: 23px;
 
+
+
+}
+
+.lock {
+    overflow: hidden;
 }
 
 .body-wrapper {
@@ -194,6 +200,7 @@ body {
 
 
     &__btn-arrow {
+
         width: 52px;
         height: 52px;
         left: 0px;
@@ -207,10 +214,39 @@ body {
 
     &__items-container {
         display: flex;
+        overflow: hidden;
+        justify-content: space-between;
+        align-items: center;
+        width: 1080px;
 
-        & :last-child {
-            margin-right: 0;
+
+        .slider__line {
+
+            display: flex;
+            // flex-direction: row;
+            // flex-wrap: nowrap;
+            // justify-content: center;
+            // gap: 90px;
+
+            position: relative;
+            left: -1080px;
+            transition: all ease 1s;
+
+            & :last-child {
+                margin-right: 0;
+            }
+
+            .items {
+                width: 990px;
+                display: flex;
+            }
+
+            // & :nth-child(3) {
+            //     margin-right: 0;
+            // }
+
         }
+
     }
 
     // .slider__item
@@ -293,12 +329,14 @@ body {
 
     &__list {
         margin-left: 125px;
+
         & :first-child {
             // margin-left: 100px;
         }
+
         display: flex;
         flex-wrap: wrap;
-        
+
         // justify-content: space-between;
         // display: grid;
         // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -312,18 +350,19 @@ body {
         &:nth-child(6) {
             margin-left: 85px;
         }
+
         text-align: center;
         margin-right: 120px;
-        margin-bottom: 55px ;
+        margin-bottom: 55px;
 
 
         &--new-line {
-            
+
             // margin-right: 0;
             // margin-left: 200px;
             // display: grid;
             // grid-template-columns: 1fr 1fr 1fr 1fr;
-            
+
         }
     }
 
@@ -458,6 +497,7 @@ body {
 
 
     &--our-pets {
+        z-index: 1;
         padding: 10px 40px;
         padding-bottom: 30px;
         background: #FFFFFF;
@@ -538,9 +578,24 @@ body {
     grid-column-gap: 40px;
     grid-row-gap: 30px;
     justify-content: center;
+    width: 1080px;
+    overflow: hidden;
 
 
 
+}
+
+.slider__line--ourpets {
+
+    display: flex;
+    position: relative;
+    left: -490px;
+    transition: all ease 1s;
+
+    .items--outpets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 
 .slider__item--our-pets {
@@ -598,13 +653,48 @@ body {
 
 }
 
-.modal-pet {
+.modal-overlay {
     display: none;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.5);
+}
+
+.modal-pet {
+
     position: relative;
     background: #FAFAFA;
+    width: 900px;
+    min-height: 120px;
+    max-height: 100%;
+    border-radius: 9px;
+    z-index: 6;
+    animation: open 0.5s ease-in-out;
+
+
     // .modal-pet__btn-close
 
-    &__btn-close {}
+    &__btn-close {
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        top: -52px;
+        right: -42px;
+        cursor: pointer;
+        overflow: hidden;
+
+        :hover {
+            background-color: #F1CDB3;
+        }
+    }
 
     // .modal-pet__close-icon
 
@@ -620,7 +710,10 @@ body {
 
     // .modal-pet__picture
 
-    &__picture {}
+    &__picture {
+        width: 500px;
+        height: 500px;
+    }
 
     // .modal-pet__content
 
@@ -972,23 +1065,49 @@ body {
         }
 
         &__items-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 40px;
+            width: 530px;
+
+            .slider__line {
+
+                display: flex;
+                // flex-direction: row;
+                // flex-wrap: nowrap;
+                justify-content: center;
+                // gap: 90px;
+
+                position: relative;
+                left: -550px;
+                transition: all ease 1s;
+
+                & :last-child {
+                    margin-right: 0;
+                }
+
+                .items {
+                    width: 580px;
+                    display: flex;
+
+                    & :last-child {
+                        display: none;
+                    }
+
+                }
 
 
-            & :last-child {
-                margin: 0;
-                // margin-left: 40px;
+
+                // & :last-child {
+                //     margin: 0;
+                //     // margin-left: 40px;
+                // }
+
+                // & :first-child {
+                //     margin: 0;
+                //     // margin-right: 20px;
+                // }
+
+
+
             }
-
-            & :first-child {
-                margin: 0;
-                // margin-right: 20px;
-            }
-
-
-
         }
 
         // .slider__item
@@ -1777,6 +1896,7 @@ body {
         align-items: center;
         margin-bottom: 42px;
         justify-content: space-around;
+        width: 270px;
 
         .btn-arrow {
 
@@ -1820,11 +1940,55 @@ body {
         }
 
         &__items-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-column-gap: 40px;
+            // display: grid;
+            // grid-template-columns: 1fr;
+            // grid-column-gap: 40px;
             order: 0;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
+
+            width: 270px;
+
+            .slider__line {
+
+                display: flex;
+                // flex-direction: row;
+                // flex-wrap: nowrap;
+                justify-content: center;
+                // gap: 90px;
+
+                position: relative;
+                left: -270px;
+                transition: all ease 1s;
+
+                & :last-child {
+                    margin-right: 0;
+                }
+
+                .items {
+                    width: 270px;
+                    display: flex;
+
+                    & :last-child {
+                        display: none;
+                    }
+
+                }
+
+
+
+                // & :last-child {
+                //     margin: 0;
+                //     // margin-left: 40px;
+                // }
+
+                // & :first-child {
+                //     margin: 0;
+                //     // margin-right: 20px;
+                // }
+
+
+
+            }
 
 
             & :last-child {
@@ -2103,9 +2267,7 @@ body {
     }
 
     .header {
-        .burger {
-            display: initial;
-        }
+        .burger {}
 
         // .header__logo
 
