@@ -702,9 +702,9 @@ btnLast.addEventListener('click', (e) => {
 })
 
 btnFirst.addEventListener('click', (e) => {
-    startItem = petsBase.length - itemsToShow
-    currentPage = pages
-    currentPageElem.innerHTML = 1
+    startItem = 0
+    currentPage = 1
+    currentPageElem.innerHTML = currentPage
 
     btnFirst.setAttribute('disabled', 'disabled')
     btnPrev.setAttribute('disabled', 'disabled')
