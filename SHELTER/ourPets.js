@@ -632,18 +632,28 @@ let currentPage = 1
 let itemsToShow = 8
 let startItem = 0
 
+if (window.matchMedia('(max-width: 1279.98px)').matches) {
+    itemsToShow = 6
+
+}
+
+if (window.matchMedia('(max-width: 767.98px)').matches) {
+    itemsToShow = 3
+
+}
+
 
 generateCards()
 
 btnNext.addEventListener('click', () => {
-    startItem += 8
+    startItem += itemsToShow
     currentPage++
     currentPageElem.innerHTML = currentPage
     generateCards()
 })
 
 btnPrev.addEventListener('click', () => {
-    startItem -= 8
+    startItem -= itemsToShow
     currentPage--
     currentPageElem.innerHTML = currentPage
     generateCards()
@@ -664,17 +674,7 @@ function generateCards() {
 
 
 
-// if (window.matchMedia('(max-width: 1279.98px)').matches) {
-//     offset = 540
-//     move = 540
 
-// }
-
-// if (window.matchMedia('(max-width: 767.98px)').matches) {
-//     offset = 270
-//     move = 270
-
-// }
 
 
 
