@@ -588,6 +588,7 @@ const petsBase = [
         "parasites": ["lice", "fleas"]
     }
 ]
+// =========================UI ELEM=====================================
 
 const burgerBtnAll = document.querySelectorAll('.burger__btn')
 const burgerMenu = document.querySelector('.burger')
@@ -599,8 +600,10 @@ const btnFirst = document.querySelector('.btn--our-pets-first')
 const btnPrev = document.querySelector('.btn--our-pets-prev')
 const btnNext = document.querySelector('.btn--our-pets-next')
 const btnLast = document.querySelector('.btn--our-pets-last')
-const currentPageElem = document.querySelector('.currentPage')
+const currentPageElem = document.querySelector('.current-page')
 const modalCloseBtn = document.querySelector('.modal-pet__close-icon')
+
+
 
 // =========================BURGER==================================
 
@@ -628,13 +631,14 @@ headerLinkBurger.forEach(link => link.addEventListener('click', (e) => burgerTog
 
 
 
-// =========================SLIDER==================================
+// =========================PAGINATOR==================================
 
 
 
 let currentPage = 1
 let itemsToShow = 8
 let startItem = 0
+let pages = petsBase.length / itemsToShow
 
 if (window.matchMedia('(max-width: 1279.98px)').matches) {
     itemsToShow = 6
@@ -646,6 +650,11 @@ if (window.matchMedia('(max-width: 767.98px)').matches) {
 
 }
 
+if (currentPage === 1) {
+    btnFirst.setAttribute('disabled', 'disabled')
+    btnPrev.setAttribute('disabled', 'disabled')
+}
+
 
 generateCards()
 
@@ -654,6 +663,12 @@ btnNext.addEventListener('click', () => {
     startItem += itemsToShow
     currentPage++
     currentPageElem.innerHTML = currentPage
+    btnFirst.removeAttribute('disabled')
+    btnPrev.removeAttribute('disabled')
+    if (currentPage === pages) {
+        btnLast.setAttribute('disabled', 'disabled')
+        btnNext.setAttribute('disabled', 'disabled')
+    }
     generateCards()
 })
 
@@ -661,8 +676,44 @@ btnPrev.addEventListener('click', () => {
     startItem -= itemsToShow
     currentPage--
     currentPageElem.innerHTML = currentPage
+    btnLast.removeAttribute('disabled')
+    btnNext.removeAttribute('disabled')
+
+    if (currentPage === 1) {
+        btnFirst.setAttribute('disabled', 'disabled')
+        btnPrev.setAttribute('disabled', 'disabled')
+    }
+
     generateCards()
 })
+
+btnLast.addEventListener('click', (e) => {
+    startItem = petsBase.length - itemsToShow
+    currentPage = pages
+    currentPageElem.innerHTML = currentPage
+
+    btnLast.setAttribute('disabled', 'disabled')
+    btnNext.setAttribute('disabled', 'disabled')
+
+    btnFirst.removeAttribute('disabled')
+    btnPrev.removeAttribute('disabled')
+
+    
+})
+
+btnFirst.addEventListener('click', (e) => {
+    startItem = petsBase.length - itemsToShow
+    currentPage = pages
+    currentPageElem.innerHTML = 1
+
+    btnFirst.setAttribute('disabled', 'disabled')
+    btnPrev.setAttribute('disabled', 'disabled')
+
+    btnLast.removeAttribute('disabled')
+    btnNext.removeAttribute('disabled')
+})
+
+
 
 
 function generateCards() {
@@ -682,7 +733,7 @@ function generateCards() {
             body.classList.toggle('lock')
             for (let elem of petsBase) {
                 if (elem['id'] == petId) {
-                    
+
                     document.querySelector('.modal-overlay').style.display = 'flex'
                     document.querySelector('.modal-pet__title').innerHTML = elem['name']
                     document.querySelector('.modal-pet__subtitle').innerHTML = `${elem['type']} - ${elem['breed']}`
@@ -692,7 +743,7 @@ function generateCards() {
                     document.querySelector('.modal-pet__item-description-dis').innerHTML = elem['diseases']
                     document.querySelector('.modal-pet__item-description-par').innerHTML = elem['parasites']
                     document.querySelector('.modal-pet__picture').src = elem['img']
-                    
+
                 }
             }
         })
@@ -703,11 +754,11 @@ function generateCards() {
 // =======================MODAL===============================
 
 modalCloseBtn.addEventListener('click', (e) => {
-    
+
     e.stopPropagation()
     document.querySelector('.modal-overlay').style.display = 'none'
     body.classList.toggle('lock')
-    
+
 })
 
 document.querySelector('.modal-overlay').addEventListener('click', (e) => {

@@ -1647,6 +1647,10 @@ body {
   border-radius: 9px 9px 0px 0px;
 }
 
+.slider__item:hover button {
+  background-color: #F1CDB3;
+}
+
 .slider__item:hover {
   -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
           box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -1673,6 +1677,7 @@ body {
   border: 2px solid #FDDCC4;
   color: #292929;
   width: 187px;
+  cursor: pointer;
 }
 
 .help {
@@ -2043,6 +2048,10 @@ body {
   /* identical to box height, or 17px */
   letter-spacing: 0.06em;
   color: #000000;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 @media (max-width: 1279.98px) {
@@ -2548,16 +2557,6 @@ body {
     -webkit-filter: none;
             filter: none;
     margin-right: 20px;
-  }
-  .disabled {
-    border: 2px solid #CDCDCD;
-    color: #CDCDCD;
-    width: 52px;
-    height: 52px;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 100px;
   }
   .modal-overlay {
     display: none;
@@ -3493,4 +3492,21 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.btn--our-pets[disabled] {
+  border: 2px solid #CDCDCD;
+  color: #CDCDCD;
+  width: 52px;
+  height: 52px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 100px;
+  cursor: default;
+}
+
+.btn--our-pets[disabled]:hover {
+  background-color: #F6F6F6;
+  cursor: default;
 }
