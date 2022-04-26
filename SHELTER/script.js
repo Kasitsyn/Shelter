@@ -113,13 +113,15 @@ generateCards()
 
 modalCloseBtn.addEventListener('click', (e) => {
 
-    document.querySelector('.modal-overlay').classList.toggle('run')
+    // document.querySelector('.modal-overlay').classList.toggle('run')
+    document.querySelector('.modal-overlay').style.display = 'none'
     e.stopPropagation()
 })
 
 document.querySelector('.modal-overlay').addEventListener('click', (e) => {
 
-    document.querySelector('.modal-overlay').classList.toggle('run')
+    // document.querySelector('.modal-overlay').classList.toggle('run')
+    document.querySelector('.modal-overlay').style.display = 'none'
 })
 
 function burgerToggle(event) {
@@ -201,7 +203,7 @@ function generateCards() {
             for (let elem of petsBase) {
                 if (elem['id'] == petId) {
                     console.log(petId)
-                    document.querySelector('.modal-overlay').classList.toggle('run')
+                    document.querySelector('.modal-overlay').style.display = 'flex'
                     document.querySelector('.modal-pet__title').innerHTML = elem['name']
                     document.querySelector('.modal-pet__subtitle').innerHTML = `${elem['type']} - ${elem['breed']}`
                     document.querySelector('.modal-pet__text').innerHTML = elem['description']
