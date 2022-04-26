@@ -109,7 +109,7 @@ const modalCloseBtn = document.querySelector('.modal-pet__close-icon')
 
 generateCards()
 
-
+// =======================MODAL===============================
 
 modalCloseBtn.addEventListener('click', (e) => {
 
@@ -125,6 +125,8 @@ document.querySelector('.modal-overlay').addEventListener('click', (e) => {
     document.querySelector('.modal-overlay').style.display = 'none'
     body.classList.toggle('lock')
 })
+
+// ==========================BURGER=================================
 
 function burgerToggle(event) {
     body.classList.toggle('lock')
@@ -172,7 +174,6 @@ if (window.matchMedia('(max-width: 767.98px)').matches) {
 }
 
 
-
 document.querySelector('.btn-arrow--right').addEventListener('click', function () {
     generateCards()
 
@@ -192,7 +193,7 @@ document.querySelector('.btn-arrow-left').addEventListener('click', function () 
 
 function generateCards() {
 
-  for (let pet of petsBase) {
+    for (let pet of petsBase) {
         sliderLine.insertAdjacentHTML('beforeend',
             `<div class="slider__item"><img src = ${pet['img']} alt = "pet" class= "slider__img"><p class="slider__text">${pet['name']}</p><button id=${pet["id"]} class="slider__link btn">Learn more</button></div>`)
 
@@ -216,10 +217,6 @@ function generateCards() {
                     document.querySelector('.modal-pet__picture').src = elem['img']
                 }
             }
-
-
-
-
         })
     })
 }

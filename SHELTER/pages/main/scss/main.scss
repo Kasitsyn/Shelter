@@ -225,11 +225,6 @@ body {
         .slider__line {
 
             display: flex;
-            // flex-direction: row;
-            // flex-wrap: nowrap;
-            // justify-content: center;
-            // gap: 90px;
-
             position: relative;
             left: -1080px;
             transition: all ease 1s;
@@ -243,9 +238,6 @@ body {
                 display: flex;
             }
 
-            // & :nth-child(3) {
-            //     margin-right: 0;
-            // }
 
         }
 

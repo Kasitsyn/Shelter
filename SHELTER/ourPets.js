@@ -600,7 +600,7 @@ const btnPrev = document.querySelector('.btn--our-pets-prev')
 const btnNext = document.querySelector('.btn--our-pets-next')
 const btnLast = document.querySelector('.btn--our-pets-last')
 const currentPageElem = document.querySelector('.currentPage')
-
+const modalCloseBtn = document.querySelector('.modal-pet__close-icon')
 
 // =========================BURGER==================================
 
@@ -627,7 +627,11 @@ burgerOverlay.addEventListener('click', (e) => {
 headerLinkBurger.forEach(link => link.addEventListener('click', (e) => burgerToggle(e)))
 
 
+
 // =========================SLIDER==================================
+
+
+
 let currentPage = 1
 let itemsToShow = 8
 let startItem = 0
@@ -645,6 +649,7 @@ if (window.matchMedia('(max-width: 767.98px)').matches) {
 
 generateCards()
 
+
 btnNext.addEventListener('click', () => {
     startItem += itemsToShow
     currentPage++
@@ -661,16 +666,55 @@ btnPrev.addEventListener('click', () => {
 
 
 function generateCards() {
-    sliderLinePets.innerHTML=''
-    
-    for (let i = startItem; i < startItem + itemsToShow; i++ ) {
-        
+    sliderLinePets.innerHTML = ''
+
+    for (let i = startItem; i < startItem + itemsToShow; i++) {
+
         sliderLinePets.insertAdjacentHTML('beforeend',
-            `<div class="slider__item slider__item--our-pets"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><a href="#" class="slider__link btn">Learn more</a></div>`)
+            `<div class="slider__item slider__item--our-pets"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button id=${petsBase[i]["id"]} class="slider__link btn">Learn more</button></div>`)
 
     }
 
+    let cardLink = document.querySelectorAll('.slider__link')
+    cardLink.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            let petId = btn.getAttribute("id")
+            body.classList.toggle('lock')
+            for (let elem of petsBase) {
+                if (elem['id'] == petId) {
+                    
+                    document.querySelector('.modal-overlay').style.display = 'flex'
+                    document.querySelector('.modal-pet__title').innerHTML = elem['name']
+                    document.querySelector('.modal-pet__subtitle').innerHTML = `${elem['type']} - ${elem['breed']}`
+                    document.querySelector('.modal-pet__text').innerHTML = elem['description']
+                    document.querySelector('.modal-pet__item-description-age').innerHTML = elem['age']
+                    document.querySelector('.modal-pet__item-description-ino').innerHTML = elem['inoculations']
+                    document.querySelector('.modal-pet__item-description-dis').innerHTML = elem['diseases']
+                    document.querySelector('.modal-pet__item-description-par').innerHTML = elem['parasites']
+                    document.querySelector('.modal-pet__picture').src = elem['img']
+                    
+                }
+            }
+        })
+    })
+
 }
+
+// =======================MODAL===============================
+
+modalCloseBtn.addEventListener('click', (e) => {
+    
+    e.stopPropagation()
+    document.querySelector('.modal-overlay').style.display = 'none'
+    body.classList.toggle('lock')
+    
+})
+
+document.querySelector('.modal-overlay').addEventListener('click', (e) => {
+    e.stopPropagation()
+    document.querySelector('.modal-overlay').style.display = 'none'
+    body.classList.toggle('lock')
+})
 
 
 
