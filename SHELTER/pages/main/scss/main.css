@@ -1847,28 +1847,12 @@ body {
 .slider--our-pets {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 40px;
-  grid-row-gap: 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 1080px;
-  overflow: hidden;
 }
 
 .slider__line--ourpets {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  left: -490px;
-  -webkit-transition: all ease 1s;
-  transition: all ease 1s;
-}
-
-.slider__line--ourpets .items--outpets {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;

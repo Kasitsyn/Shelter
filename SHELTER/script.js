@@ -99,8 +99,6 @@ const petsBase = [
 ]
 
 
-console.log(petsBase)
-
 const burgerBtnAll = document.querySelectorAll('.burger__btn')
 const burgerMenu = document.querySelector('.burger')
 const burgerNav = document.querySelector('.header__menu--burger')
@@ -108,17 +106,6 @@ const burgerOverlay = document.querySelector('.burger__overlay')
 const headerLinkBurger = document.querySelectorAll('.header__link-burger')
 const sliderLine = document.querySelector('.slider__line')
 const modalCloseBtn = document.querySelector('.modal-pet__close-icon')
-
-
-// const btnFirst = document.querySelector('.btn--our-pets-first')
-// const btnPrev = document.querySelector('.btn--our-pets-prev')
-// const btnNext = document.querySelector('.btn--our-pets-next')
-// const btnLast = document.querySelector('.btn--our-pets-last')
-
-// btnNext.addEventListener( 'click', () => {
-//     offset += move
-//     sliderLine.style.left = -offset + 'px'
-// })
 
 generateCards()
 
@@ -167,14 +154,14 @@ let move = 1080
 
 
 if (window.matchMedia('(max-width: 1279.98px)').matches) {
-    
+
     offset = 540
     move = 540
 
 }
 
 if (window.matchMedia('(max-width: 767.98px)').matches) {
-    
+
     offset = 270
     move = 270
 
@@ -201,14 +188,7 @@ document.querySelector('.btn-arrow-left').addEventListener('click', function () 
 
 function generateCards() {
 
-    //     sliderLine.insertAdjacentHTML('afterbegin',
-    //         '<div class="slider__item"><img src = "./assets/images/png/pets-katrine.png" alt = "beautiful cat" class= "slider__img"><p class="slider__text">Katrine</p><a href="#" class="slider__link btn">Learn more</a></div>')
-    //         sliderLine.insertAdjacentHTML('afterbegin',
-    //         '<div class="slider__item"><img src = "./assets/images/png/pets-katrine.png" alt = "beautiful cat" class= "slider__img"><p class="slider__text">Katrine</p><a href="#" class="slider__link btn">Learn more</a></div>')
-    //         sliderLine.insertAdjacentHTML('afterbegin',
-    //         '<div class="slider__item"><img src = "./assets/images/png/pets-katrine.png" alt = "beautiful cat" class= "slider__img"><p class="slider__text">Katrine</p><a href="#" class="slider__link btn">Learn more</a></div>')
-
-    for (let pet of petsBase) {
+  for (let pet of petsBase) {
         sliderLine.insertAdjacentHTML('beforeend',
             `<div class="slider__item"><img src = ${pet['img']} alt = "pet" class= "slider__img"><p class="slider__text">${pet['name']}</p><button id=${pet["id"]} class="slider__link btn">Learn more</button></div>`)
 
@@ -217,7 +197,7 @@ function generateCards() {
     cardLink.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let petId = btn.getAttribute("id")
-            
+
             for (let elem of petsBase) {
                 if (elem['id'] == petId) {
                     console.log(petId)
