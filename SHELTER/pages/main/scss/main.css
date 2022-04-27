@@ -847,6 +847,17 @@ template {
   .header .burger__btn {
     display: initial;
     cursor: pointer;
+    z-index: 2;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .header .btn-burger-active {
+    -webkit-transform: rotate(90deg) translate(33%, 12px);
+            transform: rotate(90deg) translate(33%, 12px);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-bottom: 20px;
   }
   .header .burger {
     position: absolute;
@@ -870,15 +881,6 @@ template {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-  }
-  .header .burger .burger__btn {
-    margin-top: 33px;
-    margin-left: 30px;
-    cursor: pointer;
-    -webkit-transition: -webkit-transform 0.9s;
-    transition: -webkit-transform 0.9s;
-    transition: transform 0.9s;
-    transition: transform 0.9s, -webkit-transform 0.9s;
   }
   .header .burger__overlay {
     display: none;
@@ -918,10 +920,6 @@ template {
   .header .burger .active {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-  }
-  .header .burger .btn-burger-active {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
   }
   .header .burger .header__logo--burger {
     display: -webkit-box;

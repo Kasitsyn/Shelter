@@ -363,6 +363,17 @@
         .burger__btn {
             display: initial;
             cursor: pointer;
+            z-index: 2;
+            position: relative;
+            transition: all 0.3s;
+            
+        }
+
+        .btn-burger-active {
+
+            transform: rotate(90deg) translate(33%, 12px);
+            transition: all 0.3s;
+            margin-bottom: 20px;
         }
 
         .burger {
@@ -383,12 +394,8 @@
             }
 
             .burger__btn {
-                // z-index: 2;
-                // position: relative;
-                margin-top: 33px;
-                margin-left: 30px;
-                cursor: pointer;
-                transition: transform 0.9s;
+                
+                
             }
 
             &__overlay {
@@ -438,9 +445,7 @@
                 transform: translateX(0);
             }
 
-            .btn-burger-active {
-                transform: rotate(90deg);
-            }
+            
 
             .header__logo--burger {
                 display: flex;

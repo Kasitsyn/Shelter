@@ -125,15 +125,17 @@ function burgerToggle(event) {
 }
 
 burgerBtnAll.forEach((btn) => {
-    btn.classList.toggle('btn-burger-active')
+    
     btn.addEventListener('click', (e) => {
         burgerToggle(e)
+        btn.classList.toggle('btn-burger-active')
     })
 
 })
 
 burgerOverlay.addEventListener('click', (e) => {
     burgerToggle(e)
+    
 })
 
 
