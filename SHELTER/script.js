@@ -100,7 +100,7 @@ const petsBase = [
 ]
 
 
-const burgerBtnAll = document.querySelectorAll('.burger__btn')
+const burgerBtn = document.querySelector('.burger__btn')
 const burgerMenu = document.querySelector('.burger')
 const burgerNav = document.querySelector('.header__menu--burger')
 const burgerOverlay = document.querySelector('.burger__overlay')
@@ -146,19 +146,11 @@ function burgerToggle(event) {
     burgerMenu.classList.toggle('run')
     burgerOverlay.classList.toggle('run')
     burgerNav.classList.toggle('active')
-    
+    burgerBtn.classList.toggle('btn-burger-active')
 }
 
-
-
-
-burgerBtnAll.forEach((btn) => {
-    
-    btn.addEventListener('click', (e) => {
-        burgerToggle(e)
-        btn.classList.toggle('btn-burger-active')
-    })
-
+burgerBtn.addEventListener('click', (e) => {
+    burgerToggle(e)
 })
 
 burgerOverlay.addEventListener('click', (e) => {
