@@ -1577,6 +1577,24 @@ body {
   margin-left: 52px;
 }
 
+@-webkit-keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
 .slider__btn-arrow {
   width: 52px;
   height: 52px;
@@ -1602,7 +1620,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 990px;
+  width: 1000px;
 }
 
 .slider__items-container .slider__line {
@@ -1610,7 +1628,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  left: -1080px;
+  left: -990px;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
 }
@@ -2275,7 +2293,7 @@ body {
     cursor: pointer;
   }
   .slider__items-container {
-    width: 530px;
+    width: 580px;
   }
   .slider__items-container .slider__line {
     display: -webkit-box;
@@ -2285,7 +2303,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     position: relative;
-    left: -550px;
+    left: -565px;
     -webkit-transition: all ease 1s;
     transition: all ease 1s;
   }
@@ -2298,9 +2316,6 @@ body {
     display: -ms-flexbox;
     display: flex;
   }
-  .slider__items-container .slider__line .items :last-child {
-    display: none;
-  }
   .slider__item {
     margin: 0;
     width: 270px;
@@ -2308,6 +2323,7 @@ body {
     background-color: #FAFAFA;
     padding-bottom: 30px;
     border-radius: 9px 9px 0px 0px;
+    margin-right: 20px;
   }
   .slider__item:hover {
     -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -2936,7 +2952,8 @@ body {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
-    width: 270px;
+    margin-bottom: 20px;
+    width: 265px;
   }
   .slider__items-container .slider__line {
     display: -webkit-box;
@@ -2958,9 +2975,6 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  .slider__items-container .slider__line .items :last-child {
-    display: none;
   }
   .slider__items-container :last-child {
     margin: 0;

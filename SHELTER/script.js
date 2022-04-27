@@ -95,6 +95,19 @@ const petsBase = [
         "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
         "diseases": ["deafness", "blindness"],
         "parasites": ["lice", "fleas"]
+    },
+
+    {
+        "id": "9",
+        "name": "Charly",
+        "img": "./assets/images/jpg/pets-charly.jpg",
+        "type": "Dog",
+        "breed": "Jack Russell Terrier",
+        "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
+        "age": "8 years",
+        "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+        "diseases": ["deafness", "blindness"],
+        "parasites": ["lice", "fleas"]
     }
 ]
 
@@ -104,11 +117,23 @@ const burgerMenu = document.querySelector('.burger')
 const burgerNav = document.querySelector('.header__menu--burger')
 const burgerOverlay = document.querySelector('.burger__overlay')
 const headerLinkBurger = document.querySelectorAll('.header__link-burger')
+const slider = document.querySelector('.slider')
 const sliderLine = document.querySelector('.slider__line')
 const modalCloseBtn = document.querySelector('.modal-pet__close-icon')
+const leftItems = document.querySelector('.item-left')
+const activeItems = document.querySelector('.item-active')
+const rightItems = document.querySelector('.item-right')
 
-generateCards()
-
+// let randomCards = mixCards()
+const randomCards = {
+    leftCards: [],
+    activeCards: [],
+    rightCards: []
+}
+mixCards()
+generateCardsLeft()
+generateCardsActive()
+generateCardsRight()
 // =======================MODAL===============================
 
 modalCloseBtn.addEventListener('click', (e) => {
@@ -155,14 +180,15 @@ headerLinkBurger.forEach(link => link.addEventListener('click', (e) => burgerTog
 
 
 // =========================SLIDER==================================
-let offset = 1080 // смещение от левого края
-let move = 1080
-
+let offset = 990 // смещение от левого края
+let move = 990
+// let time = 1000
 
 if (window.matchMedia('(max-width: 1279.98px)').matches) {
 
-    offset = 540
-    move = 540
+    offset = 565
+    move = 580
+
 
 }
 
@@ -175,37 +201,149 @@ if (window.matchMedia('(max-width: 767.98px)').matches) {
 
 
 document.querySelector('.btn-arrow--right').addEventListener('click', function () {
-    generateCards()
 
+    randomCards.activeCards = []
+    randomCards.activeCards = [...randomCards.rightCards]
+
+    sliderLine.style.transition = 'all ease 1s'
     offset += move
     sliderLine.style.left = -offset + 'px'
+    setTimeout(() => {
+        sliderLine.style.transition = 'none'
+        offset -= move
+        sliderLine.style.left = -offset + 'px'
+        activeItems.innerHTML = rightItems.innerHTML
+
+        rightItems.innerHTML = ''
+        randomCards.rightCards = []
+
+        for (let i = 0; randomCards.rightCards.length < 3; i++) {
+            let randomId = Math.floor(Math.random() * 8)
+            !randomCards.activeCards.includes(randomId)
+                ? !randomCards.rightCards.includes(randomId)
+                    ? randomCards.rightCards.push(randomId)
+                    : ''
+                : ''
+        }
+
+        generateCardsRight()
+
+
+    }, 1000)
 })
 
 document.querySelector('.btn-arrow-left').addEventListener('click', function () {
-    // generateCards()
+
+    randomCards.activeCards = []
+    randomCards.activeCards = [...randomCards.leftCards]
+
+    sliderLine.style.transition = 'all ease 1s'
     offset -= move
-
     sliderLine.style.left = -offset + 'px'
+    setTimeout(() => {
+        sliderLine.style.transition = 'none'
+        offset += move
+        sliderLine.style.left = -offset + 'px'
+        activeItems.innerHTML = leftItems.innerHTML
 
+        leftItems.innerHTML = ''
+        randomCards.leftCards = []
+
+        for (let i = 0; randomCards.leftCards.length < 3; i++) {
+            let randomId = Math.floor(Math.random() * 8)
+            !randomCards.activeCards.includes(randomId)
+                ? !randomCards.leftCards.includes(randomId)
+                    ? randomCards.leftCards.push(randomId)
+                    : ''
+                : ''
+        }
+
+        generateCardsLeft()
+
+
+    }, 1000)
 
 })
 
+function mixCards() {
 
-function generateCards() {
+    for (let i = 0; randomCards.leftCards.length < 3; i++) {
+        let randomId = Math.floor(Math.random() * 8)
+        !randomCards.activeCards.includes(randomId)
+            ? !randomCards.leftCards.includes(randomId)
+                ? randomCards.leftCards.push(randomId)
+                : ''
+            : ''
+    }
 
-    for (let pet of petsBase) {
-        sliderLine.insertAdjacentHTML('beforeend',
-            `<div class="slider__item"><img src = ${pet['img']} alt = "pet" class= "slider__img"><p class="slider__text">${pet['name']}</p><button id=${pet["id"]} class="slider__link btn">Learn more</button></div>`)
+    for (let i = 0; randomCards.activeCards.length < 3; i++) {
+        let randomId = Math.floor(Math.random() * 8)
+        !randomCards.activeCards.includes(randomId)
+            ? randomCards.activeCards.push(randomId)
+            : ''
 
     }
+
+
+
+    for (let i = 0; randomCards.rightCards.length < 3; i++) {
+        let randomId = Math.floor(Math.random() * 8)
+        !randomCards.activeCards.includes(randomId)
+            ? !randomCards.rightCards.includes(randomId)
+                ? randomCards.rightCards.push(randomId)
+                : ''
+            : ''
+    }
+
+}
+
+function generateCardsLeft() {
+
+    for (let i of randomCards.leftCards) {
+
+        leftItems.insertAdjacentHTML('afterbegin',
+            `<div class="slider__item"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button id=${petsBase[i]["id"]} class="slider__link btn">Learn more</button></div>`)
+
+    }
+
+    findCardLink()
+}
+
+function generateCardsActive() {
+
+    for (let i of randomCards.activeCards) {
+
+        activeItems.insertAdjacentHTML('afterbegin',
+            `<div class="slider__item"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button id=${petsBase[i]["id"]} class="slider__link btn">Learn more</button></div>`)
+
+    }
+
+    findCardLink()
+
+}
+
+function generateCardsRight() {
+
+    for (let i of randomCards.rightCards) {
+
+        rightItems.insertAdjacentHTML('afterbegin',
+            `<div class="slider__item"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button id=${petsBase[i]["id"]} class="slider__link btn">Learn more</button></div>`)
+
+    }
+
+    findCardLink()
+
+}
+
+function findCardLink() {
     let cardLink = document.querySelectorAll('.slider__link')
     cardLink.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let petId = btn.getAttribute("id")
-
+            body.classList.toggle('lock')
             for (let elem of petsBase) {
                 if (elem['id'] == petId) {
-                    body.classList.toggle('lock')
+                    
                     document.querySelector('.modal-overlay').style.display = 'flex'
                     document.querySelector('.modal-pet__title').innerHTML = elem['name']
                     document.querySelector('.modal-pet__subtitle').innerHTML = `${elem['type']} - ${elem['breed']}`
@@ -220,4 +358,7 @@ function generateCards() {
         })
     })
 }
+
+
+
 

@@ -196,6 +196,15 @@ body {
 
 .slider {
 
+    @keyframes  move-right {
+        from {left: -990px;}
+        to {left: 0px;}
+    }
+
+    .transition-rigth {
+        
+    }
+
     display: flex;
     justify-content: space-between;
     margin-left: 52px;
@@ -219,14 +228,14 @@ body {
         overflow: hidden;
         justify-content: space-between;
         align-items: center;
-        width: 990px;
+        width: 1000px;
 
 
         .slider__line {
 
             display: flex;
             position: relative;
-            left: -1080px;
+            left: -990px;
             transition: all ease 1s;
 
             & :last-child {
@@ -237,6 +246,13 @@ body {
                 width: 990px;
                 display: flex;
             }
+
+            // .item {
+            //     background-color: aquamarine;
+            //     width: 270px;
+            //     margin-right: 90px;
+            //     height: 500px;
+            // }
 
 
         }
@@ -1066,7 +1082,7 @@ body {
         }
 
         &__items-container {
-            width: 530px;
+            width: 580px;
 
             .slider__line {
 
@@ -1077,7 +1093,7 @@ body {
                 // gap: 90px;
 
                 position: relative;
-                left: -550px;
+                left: -565px;
                 transition: all ease 1s;
 
                 & :last-child {
@@ -1088,9 +1104,9 @@ body {
                     width: 580px;
                     display: flex;
 
-                    & :last-child {
-                        display: none;
-                    }
+                    // & :last-child {
+                    //     display: none;
+                    // }
 
                 }
 
@@ -1120,6 +1136,7 @@ body {
             background-color: $color-light-s;
             padding-bottom: 30px;
             border-radius: 9px 9px 0px 0px;
+            margin-right: 20px;
 
             &:hover {
                 box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -1959,9 +1976,9 @@ body {
             // grid-template-columns: 1fr;
             // grid-column-gap: 40px;
             order: 0;
-            // margin-bottom: 20px;
+            margin-bottom: 20px;
 
-            width: 270px;
+            width: 265px;
 
             .slider__line {
 
@@ -1983,9 +2000,9 @@ body {
                     width: 270px;
                     display: flex;
 
-                    & :last-child {
-                        display: none;
-                    }
+                    // & :last-child {
+                    //     display: none;
+                    // }
 
                 }
 
