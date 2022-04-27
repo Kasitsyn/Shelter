@@ -24,9 +24,7 @@ body {
 
 
 
-.lock {
-    overflow: hidden;
-}
+
 
 .body-wrapper {
     width: 1280px;
@@ -228,7 +226,7 @@ body {
         overflow: hidden;
         justify-content: space-between;
         align-items: center;
-        width: 1000px;
+        width: 990px;
 
 
         .slider__line {
@@ -2781,4 +2779,8 @@ body {
         cursor: default;
     }
 
+}
+
+.lock {
+    overflow: hidden;
 }

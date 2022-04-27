@@ -122,22 +122,7 @@ mixCards()
 generateCardsLeft()
 generateCardsActive()
 generateCardsRight()
-// =======================MODAL===============================
 
-modalCloseBtn.addEventListener('click', (e) => {
-
-    // document.querySelector('.modal-overlay').classList.toggle('run')
-    document.querySelector('.modal-overlay').style.display = 'none'
-    body.classList.toggle('lock')
-    e.stopPropagation()
-})
-
-document.querySelector('.modal-overlay').addEventListener('click', (e) => {
-
-    // document.querySelector('.modal-overlay').classList.toggle('run')
-    document.querySelector('.modal-overlay').style.display = 'none'
-    body.classList.toggle('lock')
-})
 
 // ==========================BURGER=================================
 
@@ -322,10 +307,11 @@ function findCardLink() {
     cardLink.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let petId = btn.getAttribute("id")
-            body.classList.toggle('lock')
+            body.classList.add('lock')
+            
             for (let elem of petsBase) {
                 if (elem['id'] == petId) {
-                    
+
                     document.querySelector('.modal-overlay').style.display = 'flex'
                     document.querySelector('.modal-pet__title').innerHTML = elem['name']
                     document.querySelector('.modal-pet__subtitle').innerHTML = `${elem['type']} - ${elem['breed']}`
@@ -335,12 +321,28 @@ function findCardLink() {
                     document.querySelector('.modal-pet__item-description-dis').innerHTML = elem['diseases']
                     document.querySelector('.modal-pet__item-description-par').innerHTML = elem['parasites']
                     document.querySelector('.modal-pet__picture').src = elem['img']
+
+
                 }
             }
         })
     })
 }
 
+// =======================MODAL===============================
 
+modalCloseBtn.addEventListener('click', (e) => {
+
+    e.stopPropagation()
+    document.querySelector('.modal-overlay').style.display = 'none'
+    body.classList.toggle('lock')
+
+})
+
+document.querySelector('.modal-overlay').addEventListener('click', (e) => {
+    e.stopPropagation()
+    document.querySelector('.modal-overlay').style.display = 'none'
+    body.classList.toggle('lock')
+})
 
 

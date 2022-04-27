@@ -189,7 +189,7 @@ function createRandomIdArray() {
 
     randomIdArray = randomIdArray.flat()
 
-    console.log(randomIdArray)
+    
 
 }
 
@@ -267,7 +267,7 @@ function generateCards() {
 
     for (let i = startItem; i < startItem + itemsToShow; i++) {
         let id = randomIdArray[i]
-        // debugger
+       
         sliderLinePets.insertAdjacentHTML('beforeend',
             `<div class="slider__item slider__item--our-pets"><img src = ${petsBase[id]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[id]['name']}</p><button id=${petsBase[id]["id"]} class="slider__link btn">Learn more</button></div>`)
     }

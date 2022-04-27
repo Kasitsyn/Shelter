@@ -1407,10 +1407,6 @@ body {
   line-height: 23px;
 }
 
-.lock {
-  overflow: hidden;
-}
-
 .body-wrapper {
   width: 1280px;
   background-color: lightsteelblue;
@@ -1618,7 +1614,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 1000px;
+  width: 990px;
 }
 
 .slider__items-container .slider__line {
@@ -3521,4 +3517,8 @@ body {
 .btn--our-pets[disabled]:hover {
   background-color: #F6F6F6;
   cursor: default;
+}
+
+.lock {
+  overflow: hidden;
 }
