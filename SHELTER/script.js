@@ -269,7 +269,7 @@ function generateCardsLeft() {
     for (let i of randomCards.leftCards) {
 
         leftItems.insertAdjacentHTML('afterbegin',
-            `<div class="slider__item"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button id=${petsBase[i]["id"]} class="slider__link btn">Learn more</button></div>`)
+            `<div class="slider__item id=${petsBase[i]["id"]}"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button class="slider__link btn">Learn more</button></div>`)
 
     }
 
@@ -281,7 +281,7 @@ function generateCardsActive() {
     for (let i of randomCards.activeCards) {
 
         activeItems.insertAdjacentHTML('afterbegin',
-            `<div class="slider__item"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button id=${petsBase[i]["id"]} class="slider__link btn">Learn more</button></div>`)
+            `<div class="slider__item" id=${petsBase[i]["id"]}><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button  class="slider__link btn">Learn more</button></div>`)
 
     }
 
@@ -294,7 +294,7 @@ function generateCardsRight() {
     for (let i of randomCards.rightCards) {
 
         rightItems.insertAdjacentHTML('afterbegin',
-            `<div class="slider__item"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button id=${petsBase[i]["id"]} class="slider__link btn">Learn more</button></div>`)
+            `<div class="slider__item" id=${petsBase[i]["id"]}><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button  class="slider__link btn">Learn more</button></div>`)
 
     }
 
@@ -303,7 +303,7 @@ function generateCardsRight() {
 }
 
 function findCardLink() {
-    let cardLink = document.querySelectorAll('.slider__link')
+    let cardLink = document.querySelectorAll('.slider__item')
     cardLink.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let petId = btn.getAttribute("id")
@@ -344,5 +344,7 @@ document.querySelector('.modal-overlay').addEventListener('click', (e) => {
     document.querySelector('.modal-overlay').style.display = 'none'
     body.classList.toggle('lock')
 })
+
+// document.querySelector('.modal-overlay').addEventListener('')
 
 

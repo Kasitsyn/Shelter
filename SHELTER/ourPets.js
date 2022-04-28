@@ -269,10 +269,10 @@ function generateCards() {
         let id = randomIdArray[i]
        
         sliderLinePets.insertAdjacentHTML('beforeend',
-            `<div class="slider__item slider__item--our-pets"><img src = ${petsBase[id]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[id]['name']}</p><button id=${petsBase[id]["id"]} class="slider__link btn">Learn more</button></div>`)
+            `<div class="slider__item slider__item--our-pets" id=${petsBase[id]["id"]}><img src = ${petsBase[id]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[id]['name']}</p><button  class="slider__link btn">Learn more</button></div>`)
     }
 
-    let cardLink = document.querySelectorAll('.slider__link')
+    let cardLink = document.querySelectorAll('.slider__item')
     cardLink.forEach(btn => {
         btn.addEventListener('click', (e) => {
             let petId = btn.getAttribute("id")
