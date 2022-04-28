@@ -269,7 +269,7 @@ function generateCardsLeft() {
     for (let i of randomCards.leftCards) {
 
         leftItems.insertAdjacentHTML('afterbegin',
-            `<div class="slider__item id=${petsBase[i]["id"]}"><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button class="slider__link btn">Learn more</button></div>`)
+            `<div class="slider__item" id=${petsBase[i]["id"]}><img src = ${petsBase[i]['img']} alt = "pet" class= "slider__img"><p class="slider__text">${petsBase[i]['name']}</p><button class="slider__link btn">Learn more</button></div>`)
 
     }
 
@@ -301,6 +301,8 @@ function generateCardsRight() {
     findCardLink()
 
 }
+
+// ===============
 
 function findCardLink() {
     let cardLink = document.querySelectorAll('.slider__item')
